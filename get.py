@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
 # Get method (/ points to localhost)
 
 @app.get("/")

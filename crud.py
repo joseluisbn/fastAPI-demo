@@ -1,11 +1,11 @@
+from uuid import uuid4
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import List
-from uuid import uuid4
 
 app = FastAPI()
 
 students = []
+
 
 class Student(BaseModel):
     id: str
@@ -14,24 +14,28 @@ class Student(BaseModel):
     email: str
     phone: int
 
-@app.get("/students") # Get data
+
+@app.get("/students")  # Get data
 def get_students():
     return students
 
-@app.get("/students/{id}") # Search data
+
+@app.get("/students/{id}")  # Search data
 def get_students(id: str):
     for student in students:
         if student["id"] == id:
             return student
     return "Student not registered"
 
-@app.post("/students") # Add data
+
+@app.post("/students")  # Add data
 def save_student(student: Student):
-    students.id = str(uuid4()) # Generates an id. See import uuid4
-    students.append(student.dict()) # Adding data in a dictionary
+    students.id = str(uuid4())  # Generates an id. See import uuid4
+    students.append(student.dict())  # Adding data in a dictionary
     return "Student registered"
 
-@app.put("/students/{id}") # Modify data
+
+@app.put("/students/{id}")  # Modify data
 def edit_student(updated_student: Student, id: str):
     for student in students:
         if student["id"] == id:
@@ -41,7 +45,8 @@ def edit_student(updated_student: Student, id: str):
             return "Student updated"
     return "Student doesn't exist"
 
-@app.delete("/students/{id}") # Delete data
+
+@app.delete("/students/{id}")  # Delete data
 def delete_student(id: str):
     for student in students:
         if student["id"] == id:

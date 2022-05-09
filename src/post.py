@@ -4,7 +4,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-class User(BaseModel):
+class Student(BaseModel):
     name: str
     lastname: str
     email: str
@@ -13,6 +13,6 @@ class User(BaseModel):
 
 # Post method. We will use the class previously created (inheritage of BaseModel)
 
-@app.post("/user")
-def save_student(user: User):
-    return f"Student {user.name} {user.lastname} saved!"
+@app.post("/student")
+def save_student(student: Student):
+    return f"Student {student.name} {student.lastname} saved!"

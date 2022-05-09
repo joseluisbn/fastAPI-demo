@@ -1,8 +1,6 @@
 fastAPI Demo
 -------------
 
-### What it does
-
 - GET
 - POST
 - CRUD

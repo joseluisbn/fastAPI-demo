@@ -1,9 +1,11 @@
-fastAPI Demo
+fastAPI Demo (WIP)
 -------------
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 - GET
 - POST
-- CRUD
+- CRUD (Create, Read, Update, Delete)
 - Type hints
 - localhost/redoc
 - localhost/docs
@@ -26,7 +28,7 @@ pip install uvicorn[standard]
 uvicorn main:app
 ```
 
-If you made changes in your code --reload a the end of the command)
+If you made changes in your code --reload a the end of the command
 
 ```bash
 uvicorn main:app --reload
@@ -46,3 +48,6 @@ uvicorn main:app --port 4000
 ### Post
 ### Put
 ### Delete
+### Further reading:
+- https://fastapi.tiangolo.com/
+- https://pydantic-docs.helpmanual.io/

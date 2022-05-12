@@ -11,7 +11,8 @@ class Student(BaseModel):
     phone: int
 
 
-# Post method. We will use the class previously created (inheritage of BaseModel)
+# Post method. We will use the class previously created (inheritage of BaseModel from pydantic)
+
 
 @app.post("/student")
 def save_student(student: Student):
